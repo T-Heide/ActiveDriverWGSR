@@ -313,7 +313,7 @@ ActiveDriverWGS = function(mutations,
 	
 	all_results = rbind(recovered_results, mutated_results, unmutated_results)
 	
-	if (!all.equal(sort(unique(all_results$id)), sort(unique(elements$id)))) {
+	if (!isTRUE(all.equal(sort(unique(all_results$id)), sort(unique(elements$id))))) {
 		stop("Error: Some elements were not evaluated. Results or recovery.dir may be corrupted.\n")
 	}
 	
